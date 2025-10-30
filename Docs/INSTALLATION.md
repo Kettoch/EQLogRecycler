@@ -89,43 +89,7 @@ $PSVersionTable.PSVersion
 
 ---
 
-### Method 2: PowerShell Gallery
-
-**Best for**: PowerShell users, version management
-
-**Requirements**:
-- PowerShell 5.0+
-- NuGet package provider
-- Internet connection
-
-**Installation**:
-
-```powershell
-# Step 1: Update PowerShellGet (recommended)
-Install-Module PowerShellGet -Force -AllowClobber
-
-# Step 2: Install EQLogRecycler
-Install-Module -Name EQLogRecycler -Scope CurrentUser
-
-# Step 3: Create shortcut (optional)
-$shell = New-Object -ComObject WScript.Shell
-$shortcut = $shell.CreateShortcut([Environment]::GetFolderPath("Desktop") + "\EQ Log Recycler.lnk")
-$shortcut.TargetPath = "powershell.exe"
-$shortcut.Arguments = "-NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -Command `"Import-Module EQLogRecycler; Start-EQLogRecycler`""
-$shortcut.IconLocation = "C:\Program Files\PowerShell\7\pwsh.exe,0"
-$shortcut.Save()
-```
-
-**Update**:
-```powershell
-Update-Module -Name EQLogRecycler
-```
-
-**Location**: `$PROFILE\..\Modules\EQLogRecycler\`
-
----
-
-### Method 3: Manual Installation
+### Method 2: Manual Installation
 
 **Best for**: Advanced users, custom deployment, offline systems
 
@@ -206,7 +170,7 @@ Invoke-Item "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup\EQ Log R
 
 ---
 
-### Method 4: Portable Installation
+### Method 3: Portable Installation
 
 **Best for**: No permanent installation, testing, multiple profiles
 
@@ -403,12 +367,6 @@ Remove-Item -Path "$env:PUBLIC\Desktop\EQ Log Recycler.lnk" -Force -ErrorAction 
 
 # Remove registry (optional - keeps settings)
 # Remove-Item -Path "HKCU:\Software\EQTools" -Recurse -Force
-```
-
-### PowerShell Gallery Removal
-
-```powershell
-Uninstall-Module -Name EQLogRecycler -Force
 ```
 
 ### Preserve Archives

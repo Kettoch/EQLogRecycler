@@ -61,17 +61,7 @@ A professional, user-friendly Windows utility that automatically rotates EverQue
 - Registers for system startup (if selected)
 - Creates VBS launcher files for system tray
 
-### Option 2: PowerShell Gallery
-
-```powershell
-# Install from PowerShell Gallery
-Install-Module -Name EQLogRecycler -Scope CurrentUser
-
-# Or update if already installed
-Update-Module -Name EQLogRecycler
-```
-
-### Option 3: Manual Installation (Advanced)
+### Option 2: Manual Installation (Advanced)
 
 1. Download `EQLogRecycler.ps1` to desired folder:
    ```
@@ -540,28 +530,6 @@ EverQuest is a legendary MMORPG that's been running since 1999. Log files grow q
 - [Windows Forms Tutorial](https://docs.microsoft.com/en-us/dotnet/framework/winforms/)
 - [Registry Scripting Guide](https://docs.microsoft.com/en-us/powershell/scripting/samples/working-with-registry-entries)
 - [EverQuest Log Format](https://everquest.fandom.com/wiki/Logging)
-
----
-
-## 🚀 Roadmap
-
-### v1.1 (Planned)
-- [ ] File logging for troubleshooting
-- [ ] Multi-language UI support
-- [ ] Advanced scheduling options
-- [ ] Configuration import/export
-
-### v1.2 (Proposed)
-- [ ] Email notifications on errors
-- [ ] Pause/resume functionality
-- [ ] Dark mode UI option
-- [ ] Integration with EQ launcher
-
-### v2.0 (Future Vision)
-- [ ] Cross-platform support (Linux/Mac via WSL)
-- [ ] Web-based configuration
-- [ ] Cloud backup integration
-- [ ] Multiple game support
 
 ---
 
