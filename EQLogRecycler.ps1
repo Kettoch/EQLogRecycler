@@ -74,6 +74,7 @@ $Script:LogEnabled = $true
 $Script:MaxLogSizeBytes = 1MB  # Roll over log after 1MB
 
 # Function to create registry structure if it doesn't exist
+#STUB - FUNCTION - Initialize-Registry
 function Initialize-Registry {
     if (!(Test-Path $Script:RegPath)) {
         New-Item -Path $Script:RegPath -Force | Out-Null
@@ -81,6 +82,7 @@ function Initialize-Registry {
 }
 
 # Function to write messages to file log with rotation
+#STUB - FUNCTION - Write-ToLog
 function Write-ToLog {
     param(
         [string]$Message,
@@ -114,6 +116,7 @@ function Write-ToLog {
 }
 
 # Function to get configuration from registry
+#STUB - FUNCTION - Get-Config
 function Get-Config {
     Initialize-Registry
     
@@ -143,6 +146,7 @@ function Get-Config {
 }
 
 # Function to save configuration to registry
+#STUB - FUNCTION - Save-Config
 function Save-Config {
     param($Config)
     
@@ -171,6 +175,7 @@ function Save-Config {
 }
 
 # Function to validate and normalize configuration object
+#STUB - FUNCTION - Validate-Config
 function Validate-Config {
     param($Config)
     
@@ -227,6 +232,7 @@ function Validate-Config {
 }
 
 # Function to show file picker dialog
+#STUB - FUNCTION - Select-LogFile
 function Select-LogFile {
     $fileDialog = New-Object System.Windows.Forms.OpenFileDialog
     try {
@@ -247,6 +253,7 @@ function Select-LogFile {
 }
 
 # Function to show folder picker dialog
+#STUB - FUNCTION - Select-ArchiveFolder
 function Select-ArchiveFolder {
     $folderDialog = New-Object System.Windows.Forms.FolderBrowserDialog
     try {
@@ -280,6 +287,7 @@ function Select-ArchiveFolder {
 }
 
 # Function to prompt for recycle time with validation
+#STUB - FUNCTION - Get-RecycleTime
 function Get-RecycleTime {
     $form = New-Object System.Windows.Forms.Form
     try {
@@ -351,6 +359,7 @@ function Get-RecycleTime {
 }
 
 # Function to recycle log files
+#STUB - FUNCTION - Invoke-LogRecycle
 function Invoke-LogRecycle {
     param(
         $Config,
@@ -440,6 +449,7 @@ function Invoke-LogRecycle {
 }
 
 # Helper function to update log file listbox (DRY principle - eliminates duplication)
+#STUB - FUNCTION - Update-LogFileListBox
 function Update-LogFileListBox {
     param(
         [System.Windows.Forms.ListBox]$ListBox,
@@ -471,6 +481,7 @@ function Update-LogFileListBox {
 }
 
 # Function to show and manage log files
+#STUB - FUNCTION - Show-LogFileManager
 function Show-LogFileManager {
     param($Config)
     
@@ -578,6 +589,7 @@ function Show-LogFileManager {
 }
 
 # Function to show configuration dialog
+#STUB - FUNCTION - Show-ConfigDialog
 function Show-ConfigDialog {
     param($Config)
     
@@ -721,6 +733,7 @@ function Show-ConfigDialog {
 }
 
 # Function to create system tray icon
+#STUB - FUNCTION - Start-TrayMonitor
 function Start-TrayMonitor {
     param($Config)
     
@@ -864,6 +877,7 @@ function Start-TrayMonitor {
 }
 
 # Function to start silent monitoring
+#STUB - FUNCTION - Start-SilentMonitor
 function Start-SilentMonitor {
     param($Config)
     
