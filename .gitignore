@@ -1,0 +1,95 @@
+# PowerShell
+*.ps1xml
+*.psd1
+*.psm1
+!EQLogRecycler.ps1
+
+# Visual Studio and VSCode
+.vscode/
+.vs/
+*.sln
+*.csproj
+*.user
+bin/
+obj/
+.idea/
+
+# Build outputs
+Installer/*.exe
+Installer/*.zip
+!Installer/EQLogRecycler_Setup_v*.exe
+
+# Temporary files
+*.tmp
+*.temp
+~*
+*.bak
+*.swp
+*.swo
+
+# OS-specific
+Thumbs.db
+.DS_Store
+Desktop.ini
+
+# Test artifacts
+Tests/Results/
+Tests/Coverage/
+Test-Results.xml
+TestResults/
+
+# Logs
+*.log
+Logs/
+*.log.*
+
+# User-specific
+.idea/
+*.iml
+.env
+.env.local
+config.local.json
+
+# Package manager
+node_modules/
+.npm/
+
+# Dependencies
+packages/
+lib/
+
+# IDE files
+.vscode/extensions
+.vscode/launch.json
+.vscode/settings.json
+
+# Archives (except official releases)
+*.zip
+!Installer/*.zip
+
+# Inno Setup build artifacts
+*.iss~
+Setup Files/
+
+# Pester test output
+TestResults/
+*TestResults*.xml
+
+# Module cache
+*.md5
+
+# Backup files
+*.backup
+*.bkp
+*backup*
+
+# Generated files (keep sources)
+!*.ps1
+!*.iss
+
+# Local development only
+dev/
+.local/
+testing/
+experimental/
+Documentation/
