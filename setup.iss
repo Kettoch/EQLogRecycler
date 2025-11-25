@@ -1,10 +1,10 @@
 ; EverQuest Log Recycler - Inno Setup Script
 ; Creates a professional installer EXE
-; Version 1.0 - Initial Release
+; Version 1.0.1 - Bug Fix Release
 
 #define MyAppName "EverQuest Log Recycler"
-#define MyAppVersion "1.0"
-#define MyAppVersionType "Initial Release"
+#define MyAppVersion "1.0.1"
+#define MyAppVersionType "Bug Fix Release"
 #define MyAppPublisher "TRTools"
 #define MyAppURL "https://yourwebsite.com"
 #define MyAppExeName "EQLogRecycler.ps1"

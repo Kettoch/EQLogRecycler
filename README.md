@@ -1,6 +1,6 @@
 # 📜 EverQuest Log Recycler
 
-![Version](https://img.shields.io/badge/version-1.0-blue.svg)
+![Version](https://img.shields.io/badge/version-1.0.1-blue.svg)
 ![PowerShell](https://img.shields.io/badge/powershell-5.1+-green.svg)
 ![Windows](https://img.shields.io/badge/platform-Windows-0078D4.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
@@ -46,7 +46,7 @@ A professional, user-friendly Windows utility that automatically rotates EverQue
 
 ### Option 1: Installer (Recommended for Users)
 
-1. Download the latest `EQLogRecycler_Setup_v1.0.exe` from Releases
+1. Download the latest `EQLogRecycler_Setup_v1.0.1.exe` from Releases
 2. Right-click → **Run as Administrator**
 3. Follow the installer wizard
 4. Choose installation options:
@@ -498,7 +498,7 @@ Please include:
 
 | Metric | Value |
 |--------|-------|
-| **Version** | 1.0 |
+| **Version** | 1.0.1 |
 | **Status** | Production Ready |
 | **Lines of Code** | 875 |
 | **Functions** | 12 |

@@ -6,7 +6,7 @@
     Monitors and recycles EverQuest log files at a specified time daily.
     Can run as a system tray application or silently in background.
 .VERSION
-    1.0 - Initial Release
+    1.0.1 - Bug Fix Release
 .PARAMETER RecycleNow
     Immediately recycle all configured log files and exit
 .PARAMETER RecycleOne
@@ -50,8 +50,8 @@ Add-Type -AssemblyName System.Windows.Forms
 Add-Type -AssemblyName System.Drawing
 
 # Application version
-$Script:Version = "1.0"
-$Script:VersionReleaseType = "Initial Release"
+$Script:Version = "1.0.1"
+$Script:VersionReleaseType = "Bug Fix Release"
 
 # Registry configuration
 $Script:RegPath = "HKCU:\Software\EQTools"
@@ -346,7 +346,7 @@ function Get-RecycleTime {
             # Time is valid, proceed with OK
             $form.DialogResult = [System.Windows.Forms.DialogResult]::OK
             $form.Close()
-        }, $null)
+        })
         
         if ($form.ShowDialog() -eq [System.Windows.Forms.DialogResult]::OK) {
             return $textBox.Text
