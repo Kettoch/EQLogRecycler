@@ -346,7 +346,7 @@ function Get-RecycleTime {
             # Time is valid, proceed with OK
             $form.DialogResult = [System.Windows.Forms.DialogResult]::OK
             $form.Close()
-        }, $null)
+        })
         
         if ($form.ShowDialog() -eq [System.Windows.Forms.DialogResult]::OK) {
             return $textBox.Text
