@@ -1,9 +1,9 @@
 ; EverQuest Log Recycler - Inno Setup Script
 ; Creates a professional installer EXE
-; Version 1.0.1 - Bug Fix Release
+; Version 1.0.3 - Bug Fix Release
 
 #define MyAppName "EverQuest Log Recycler"
-#define MyAppVersion "1.0.1"
+#define MyAppVersion "1.0.3"
 #define MyAppVersionType "Bug Fix Release"
 #define MyAppPublisher "TRTools"
 #define MyAppURL "https://yourwebsite.com"
@@ -44,9 +44,9 @@ Source: "README.md"; DestDir: "{app}"; Flags: ignoreversion isreadme
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
-Name: "{autoprograms}\{#MyAppName}"; Filename: "{app}\Run.vbs"; Comment: "EverQuest Log Recycler"
-Name: "{autodesktop}\{#MyAppName}"; Filename: "{app}\Run.vbs"; Comment: "EverQuest Log Recycler"; Tasks: desktopicon
-Name: "{userstartup}\{#MyAppName}"; Filename: "{app}\RunHidden.vbs"; Comment: "EverQuest Log Recycler (Auto-start)"; Tasks: startupicon
+Name: "{autoprograms}\{#MyAppName}"; Filename: "{sys}\wscript.exe"; Parameters: """{app}\Run.vbs"""; Comment: "EverQuest Log Recycler"
+Name: "{autodesktop}\{#MyAppName}"; Filename: "{sys}\wscript.exe"; Parameters: """{app}\Run.vbs"""; Comment: "EverQuest Log Recycler"; Tasks: desktopicon
+Name: "{userstartup}\{#MyAppName}"; Filename: "{sys}\wscript.exe"; Parameters: """{app}\RunHidden.vbs"""; Comment: "EverQuest Log Recycler (Auto-start)"; Tasks: startupicon
 Name: "{autodesktop}\Uninstall {#MyAppName}"; Filename: "{uninstallexe}"; Tasks: desktopicon
 
 [Tasks]
@@ -64,16 +64,16 @@ var
 begin
   InstallPath := ExpandConstant('{app}');
   
-  // Create Run.vbs for visible execution
+  // Create Run.vbs for hidden execution (tray app)
   SetArrayLength(RunVBS, 2);
   RunVBS[0] := 'Set objShell = CreateObject("Wscript.Shell")';
-  RunVBS[1] := 'objShell.Run "powershell.exe -ExecutionPolicy Bypass -File """ & "' + InstallPath + '\EQLogRecycler.ps1" & """, 1"';
+  RunVBS[1] := 'objShell.Run "powershell.exe -WindowStyle Hidden -ExecutionPolicy Bypass -File ""' + InstallPath + '\EQLogRecycler.ps1""", 0';
   SaveStringsToFile(InstallPath + '\Run.vbs', RunVBS, False);
   
   // Create RunHidden.vbs for silent execution
   SetArrayLength(RunHiddenVBS, 2);
   RunHiddenVBS[0] := 'Set objShell = CreateObject("Wscript.Shell")';
-  RunHiddenVBS[1] := 'objShell.Run "powershell.exe -WindowStyle Hidden -ExecutionPolicy Bypass -File """ & "' + InstallPath + '\EQLogRecycler.ps1" & """, 0"';
+  RunHiddenVBS[1] := 'objShell.Run "powershell.exe -WindowStyle Hidden -ExecutionPolicy Bypass -File ""' + InstallPath + '\EQLogRecycler.ps1""", 0';
   SaveStringsToFile(InstallPath + '\RunHidden.vbs', RunHiddenVBS, False);
 end;
 
@@ -87,7 +87,7 @@ end;
 
 // Launch the application after install if selected
 [Run]
-Filename: "{app}\Run.vbs"; Description: "Configure and launch {#MyAppName}"; Flags: postinstall nowait skipifsilent; Tasks: runnow
+Filename: "{sys}\wscript.exe"; Parameters: """{app}\Run.vbs"""; Description: "Configure and launch {#MyAppName}"; Flags: postinstall nowait skipifsilent; Tasks: runnow
 
 [UninstallDelete]
 Type: files; Name: "{app}\Run.vbs"

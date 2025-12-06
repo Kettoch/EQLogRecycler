@@ -50,7 +50,7 @@ Add-Type -AssemblyName System.Windows.Forms
 Add-Type -AssemblyName System.Drawing
 
 # Application version
-$Script:Version = "1.0.1"
+$Script:Version = "1.0.3"
 $Script:VersionReleaseType = "Bug Fix Release"
 
 # Registry configuration
